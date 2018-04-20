@@ -1,0 +1,32 @@
+{
+    "name": "atico/spreadsheet-translator-symfony-bundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "description": "Atico - Spreadsheet Translator Bundle",
+    "keywords": ["spreadsheet to translation symfony bundle", "symfony bundle translator", "symfony translator utilities", "symfony translation utilities"],
+    "homepage": "https://github.com/samuelvi/spreadsheet-translator-symfony-bundle",
+    "authors": [
+        {
+            "name": "Samuel Vicent",
+            "email": "samuelvicent@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AticO\\Bundle\\SpreadsheetTranslatorBundle\\": "./"
+        }
+    },
+    "repositories": [{
+        "type": "path",
+        "url": "../Core",
+        "options": {
+            "symlink": true
+        }
+    }],
+    "require": {
+        "atico/spreadsheet-translator-core": "dev-master",
+        "php": ">=5.5.9"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
