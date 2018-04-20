@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AticO\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
+namespace Atico\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

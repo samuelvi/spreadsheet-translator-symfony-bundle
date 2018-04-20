@@ -1,3 +1,3 @@
 services:
     atico.spreadsheet_translator.manager:
-        class: AticO\SpreadsheetTranslator\Core\SpreadsheetTranslator
+        class: Atico\SpreadsheetTranslator\Core\SpreadsheetTranslator

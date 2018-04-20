@@ -2,7 +2,7 @@
 
 /*
 <<<<<<< HEAD
- * This file is part of the AticO/Spreadsheet2Translation package.
+ * This file is part of the Atico/Spreadsheet2Translation package.
 =======
  * This file is part of the Atico/SpreadsheetTranslator package.
 >>>>>>> latest_branch
@@ -13,7 +13,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AticO\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
+namespace Atico\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
