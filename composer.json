@@ -4,7 +4,6 @@
     "type": "symfony-bundle",
     "description": "Atico - Spreadsheet Translator Bundle",
     "keywords": ["spreadsheet to translation symfony bundle", "symfony bundle translator", "symfony translator utilities", "symfony translation utilities"],
-    "homepage": "https://github.com/samuelvi/spreadsheet-translator-symfony-bundle",
     "authors": [
         {
             "name": "Samuel Vicent",
@@ -24,9 +23,7 @@
         }
     }],
     "require": {
-        "atico/spreadsheet-translator-core": "^1.0.0",
+        "atico/spreadsheet-translator-core": "dev-master",
         "php": ">=5.5.9"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
