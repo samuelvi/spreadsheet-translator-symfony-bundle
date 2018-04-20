@@ -24,7 +24,7 @@
         }
     }],
     "require": {
-        "atico/spreadsheet-translator-core": "^1.0.0",
+        "atico/spreadsheet-translator-core": "^1.0",
         "php": ">=5.5.9"
     },
     "minimum-stability": "dev",
