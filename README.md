@@ -3,6 +3,8 @@ Spreadsheet Translator Symfony Bundle
 
 The Spreadsheet Translator Symfony Bundle allows creating **translation files** for your web projects from **spreadsheet files**.
 
+There are some demos at the end of the documentation that aims to help you as much as possible.
+
 This bundle is able to manage Spreadsheet files (xls/xlsx) from a local drive or cloud services such as: Google Drive and Microsoft One Drive, both of them with or without authentication.
 
 The main advantages for managing web translations from spreadsheet files are:
@@ -211,6 +213,12 @@ homepage:
     subtitle: >
         Traducteur de pages Web à partir de feuilles de calcul
 ```
+
+Demos
+-----
+
+<a href="https://github.com/samuelvi/spreadsheet-translator-symfony-demo-local-file-provider-php-exporter" target="_blank">1) Lightweight Symfony Demo Application for the Spreadsheet Translator functionallity considering a local file as a spreadsheet source file and php format for translated file.</a>
+
 
 
 Requirements
