@@ -143,6 +143,14 @@ $ composer require atico/spreadsheet-translator-exporter-yml master-dev
 $ composer require atico/spreadsheet-translator-exporter-php master-dev 
 ```
 
+Links to the libraries:
+
+- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-php">Php Exporter</a>
+- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-xlif">Xlif Exporter</a>
+- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-yml">Yaml Exporter</a>
+
+
+
 Example of Spreadsheet File with a single tab
 ------------
 
@@ -218,6 +226,7 @@ Demos
 -----
 
 <a href="https://github.com/samuelvi/spreadsheet-translator-symfony-demo-local-file-provider-php-exporter" target="_blank">1) Lightweight Symfony Demo Application for the Spreadsheet Translator functionallity considering a local file as a spreadsheet source file and php format for translated file.</a>
+
 
 
 
