@@ -145,9 +145,9 @@ $ composer require atico/spreadsheet-translator-exporter-php master-dev
 
 Links to the libraries:
 
-- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-php">Php Exporter</a>
-- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-xlif">Xlif Exporter</a>
-- <a href="https://github.com/samuelvi/atico-spreadsheet-translator-exporter-yml">Yaml Exporter</a>
+- <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-php">Php Exporter</a>
+- <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-xliff">Xliff Exporter</a>
+- <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-yml">Yaml Exporter</a>
 
 
 
