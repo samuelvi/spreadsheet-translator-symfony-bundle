@@ -49,7 +49,12 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                                 ->scalarNode('document_id')
                                 ->end()
+                                ->scalarNode('application_name')
+                                ->end()
+                                ->variableNode('scopes')
+                                ->end()
                             ->end()
+
                         ->end()
                         ->arrayNode('exporter')
                             ->children()
