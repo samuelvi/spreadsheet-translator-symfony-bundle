@@ -44,7 +44,7 @@ class SpreadsheetTranslatorExtension extends Extension
     {
         $processor = new Processor();
         $configuration = new Configuration();
-
+        
         $config = $processor->processConfiguration($configuration, $configs);
         $container->getDefinition('atico.spreadsheet_translator.manager')->setArgument(0, $config);
     }
