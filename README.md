@@ -1,6 +1,5 @@
 
 <br/>
-
 Spreadsheet Translator Symfony Bundle
 =====================================
 
@@ -23,13 +22,14 @@ The main advantages for managing web translations from spreadsheet files are:
 - Avoid innecessary database queries for each translation entry or complex cache infrastructure.
 
 
+<br/>
 Example of Spreadsheet File with a single tab
 ------------
 
 - <a href="https://docs.google.com/spreadsheets/d/1MgpsX-UXVVx1UAmbQvKrrE8yvWBt62haKuBieyOL_cE/edit?usp=sharing">Example of spreadsheet file in google drive without auth.</a>
 
 
-
+<br/>
 Adapters
 --------
 
@@ -52,6 +52,7 @@ The bundle is constructed having in mind separation of concerns, so functionalli
   - Php
 
 
+<br/>
 Installation
 ------------
 
@@ -87,6 +88,7 @@ $ composer require atico/spreadsheet-translator-exporter-xliff master-dev
 ```
 
 
+<br/>
 Configuration
 -------------
 
@@ -109,6 +111,8 @@ atico_spreadsheet_translator:
 
 ```
 
+
+<br/>
 Adapters as independent Packages
 --------------------------------
 
@@ -233,12 +237,12 @@ homepage:
         Traducteur de pages Web à partir de feuilles de calcul
 ```
 
+
+<br/>
 Demos
 -----
 
 <a href="https://github.com/samuelvi/spreadsheet-translator-symfony-demo-local-file-provider-php-exporter" target="_blank">1) Lightweight Symfony Demo Application for the Spreadsheet Translator functionallity considering a local file as a spreadsheet source file and php format for translated file.</a>
-
-
 
 
 Requirements
@@ -248,7 +252,7 @@ Requirements
   * Symfony ~2.3|~3.0
 
 
-
+<br/>
 Contributing
 ------------
 
@@ -258,6 +262,8 @@ If you'd like to contribute code but aren't sure what, the issues list is a good
 
 All contributors (whether contributing code, involved in issue discussions, or involved in any other way) must abide by our code of conduct.
 
+
+<br/>
 License
 -------
 
