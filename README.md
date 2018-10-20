@@ -1,7 +1,10 @@
+
+<br/>
+
 Spreadsheet Translator Symfony Bundle
 =====================================
 
-The Spreadsheet Translator Symfony Bundle allows creating **translation files** for your web projects from **spreadsheet files**.
+The Spreadsheet Translator Symfony Bundle allows creating **translation files** for your web projects from **spreadsheet files (local or remote excel files).**
 
 There are some demos at the end of the documentation that aims to help you as much as possible.
 
@@ -18,6 +21,14 @@ The main advantages for managing web translations from spreadsheet files are:
 - Most of these third party apps bring great tools out-of-the-box such as: search, copy, paste, replace text. (Microsoft Excel, Free Office, Google Drive, One Drive).
 - Almost everyone is familiar with existing spreadsheets apps, most of the times more productive than onward/backward web based backend systems.
 - Avoid innecessary database queries for each translation entry or complex cache infrastructure.
+
+
+Example of Spreadsheet File with a single tab
+------------
+
+- <a href="https://docs.google.com/spreadsheets/d/1MgpsX-UXVVx1UAmbQvKrrE8yvWBt62haKuBieyOL_cE/edit?usp=sharing">Example of spreadsheet file in google drive without auth.</a>
+
+
 
 Adapters
 --------
@@ -148,12 +159,6 @@ Links to the libraries:
 - <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-php">Php Exporter</a>
 - <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-xliff">Xliff Exporter</a>
 - <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-yml">Yaml Exporter</a>
-
-
-Example of Spreadsheet File with a single tab
-------------
-
-c- <a href="https://docs.google.com/spreadsheets/d/1MgpsX-UXVVx1UAmbQvKrrE8yvWBt62haKuBieyOL_cE/edit?usp=sharing">Example of spreadsheet file in google drive without auth.</a>
 
 
 Structure of Spreadsheet File with a single tab
