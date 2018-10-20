@@ -2,7 +2,7 @@
     "name": "atico/spreadsheet-translator-symfony-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
-    "description": "Spreadsheet Translator Bundle - Translate your web site from excel files (local, google drive with or without auth, onedrive with or without aut)",
+    "description": "Spreadsheet Translator Bundle - Translate your web site from excel files (local, google drive with or without auth, onedrive with or without auth)",
     "keywords": ["spreadsheet to translation symfony bundle", "symfony bundle translator", "symfony translator utilities", "symfony translation utilities"],
     "authors": [
         {
