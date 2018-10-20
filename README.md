@@ -150,8 +150,13 @@ Links to the libraries:
 - <a href="https://github.com/samuelvi/spreadsheet-translator-exporter-yml">Yaml Exporter</a>
 
 
-
 Example of Spreadsheet File with a single tab
+------------
+
+- <a href="https://docs.google.com/spreadsheets/d/1MgpsX-UXVVx1UAmbQvKrrE8yvWBt62haKuBieyOL_cE/edit?usp=sharing">Example of spreadsheet file in google drive without auth.</a>
+
+
+Structure of Spreadsheet File with a single tab
 ------------
 
 ```
@@ -163,6 +168,7 @@ Example of Spreadsheet File with a single tab
 ```
 
 tab name: common
+
 
 
 Section and subsection will be joined with a dot, you can specify another character by setting a custom shared->name_separator value.
