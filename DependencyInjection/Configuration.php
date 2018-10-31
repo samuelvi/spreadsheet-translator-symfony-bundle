@@ -73,7 +73,7 @@ class Configuration implements ConfigurationInterface
                         ->end()
                         ->scalarNode('name_separator')->defaultValue('.')
                         ->end()
-                        ->scalarNode('include_empty')->defaultValue(false)
+                        ->scalarNode('lazy_mode')->defaultValue(false)
                         ->end()
                     ->end()
                 ->end()
