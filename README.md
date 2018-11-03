@@ -113,6 +113,7 @@ atico_spreadsheet_translator:
         shared:
             default_locale: 'en'
             name_separator: '.' # translation subkey separator, i.e, homepage.h1, homepage.h2...
+            lazy_mode: true # constructs translation keys based on previous key values, avoid repeating same subkey several times
 
 ```
 
@@ -186,6 +187,7 @@ tab name: common
 
 
 
+
 Section and subsection will be joined with a dot, you can specify another character by setting a custom shared->name_separator value.
 In this case there will be 2 different translation keys: homepage.title and homepage.subtitle.
 
@@ -194,6 +196,26 @@ The package automatically detects locales by their format, in this example these
 
 
 The package will translate the tab with the name specified in the configuration exporter->domain value. It's planned to extend this behaviour to several tabs or all the tabs.
+
+
+The configuration allows a lazy mode parameter (shared => lazy_mode). This will allow inheriting which helps writing faster, having a more clear view of the translation keys and avoiding copy and paste mistakes.
+
+Structure of Spreadsheet File with a single tab in lazy mode
+------------
+
+```
+| section  | group    | container  | en_GB                                     
+|----------|----------|--------------------------------------------
+| contact  | title    | h1         | Contact form  
+|          | subtitle | h2         | Don't be in doubt
+|          | form     | first_name | First name                    
+|          |          | email      | E-mail  
+  
+```
+
+
+
+
 
 
 There will be 3 files created at app/Resources/translations: demo_common.es_ES.xliff, demo_common.en_GB.xliff and demo_common.fr_FR.xliff. Please notice the prefix demo_, this is the value set at the configuration var exporter->prefix.
