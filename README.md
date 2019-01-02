@@ -268,11 +268,22 @@ homepage:
 
 <br/>
 
-Demos
+ Lightweight Symfony Demos
 -----
+<ol>
 
-<a href="https://github.com/samuelvi/spreadsheet-translator-symfony-demo-local-file-provider-php-exporter" target="_blank">1) Lightweight Symfony Demo Application for the Spreadsheet Translator functionallity considering a local file as a spreadsheet source file and php format for translated file.</a>
+<li>
+<a href="https://github.com/samuelvi/spreadsheet-translator-symfony-demo-local-file-provider-php-exporter" target="_blank">Local file as a spreadsheet source file and php format for translated file.</a>
+</li>
 
+<li>
+<a href="https://github.com/samuelvi/translator-symfony-demo-google-to-yml" target="_blank">Google Spreadsheet with read permisions as source (without Auth) and yml format for translated file.</a>
+<li>
+
+<a href="https://github.com/samuelvi/translator-symfony-demo-google-auth-to-php" target="_blank">Google Spreadsheet with Authentication required as source and php format for translated file.</a>
+</li>
+
+</ol>
 
 <br/>
 
