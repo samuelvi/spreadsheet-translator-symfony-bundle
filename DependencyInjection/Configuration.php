@@ -1,11 +1,7 @@
 <?php
 
 /*
-<<<<<<< HEAD
- * This file is part of the Atico/Spreadsheet2Translation package.
-=======
  * This file is part of the Atico/SpreadsheetTranslator package.
->>>>>>> latest_branch
  *
  * (c) Samuel Vicent <samuelvicent@gmail.com>
  *
