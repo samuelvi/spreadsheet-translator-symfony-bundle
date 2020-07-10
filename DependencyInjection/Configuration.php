@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('atico_spreadsheet_translator');
         $rootNode = $treeBuilder->root('atico_spreadsheet_translator');
 
         $rootNode
