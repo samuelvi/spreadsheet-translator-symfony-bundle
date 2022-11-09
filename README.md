@@ -241,7 +241,6 @@ The contents for the exporter->format to **xliff**, the resulting file contents 
 </xliff> 
 ```
 
-
 There are two additional exporter formats adapters, you must include them in your composer json before using them.
 
 Setting exporter->format to **php** would result for **en_GB (demo_common.en_GB.php)** the following translation file:

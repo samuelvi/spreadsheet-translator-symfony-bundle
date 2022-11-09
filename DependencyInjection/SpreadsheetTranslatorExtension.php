@@ -11,6 +11,7 @@
 
 namespace Atico\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
 
+use Exception;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -25,13 +26,15 @@ use Symfony\Component\Config\Definition\Processor;
  */
 class SpreadsheetTranslatorExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    /** @throws Exception */
+    public function load(array $configs, ContainerBuilder $container) : void
     {
         $this->loadServices($container);
         $this->injectConfigurationIntoSpreadsheetTranslatorManager($configs, $container);
     }
 
-    private function loadServices(ContainerBuilder $container)
+    /** @throws Exception */
+    private function loadServices(ContainerBuilder $container) : void
     {
         $loader = new YamlFileLoader(
             $container,
@@ -40,7 +43,7 @@ class SpreadsheetTranslatorExtension extends Extension
         $loader->load('services.yml');
     }
 
-    private function injectConfigurationIntoSpreadsheetTranslatorManager(array $configs, ContainerBuilder $container)
+    private function injectConfigurationIntoSpreadsheetTranslatorManager(array $configs, ContainerBuilder $container) : void
     {
         $processor = new Processor();
         $configuration = new Configuration();
@@ -49,7 +52,7 @@ class SpreadsheetTranslatorExtension extends Extension
         $container->getDefinition('atico.spreadsheet_translator.manager')->setArgument(0, $config);
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'atico_spreadsheet_translator';
     }

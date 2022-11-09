@@ -11,26 +11,17 @@
 
 namespace Atico\Bundle\SpreadsheetTranslatorBundle;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SpreadsheetTranslatorBundle extends Bundle
 {
     /**
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     */
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-    }
-
-    /**
      * Returns the bundle's container extension class.
      *
      * @return string
      */
-    protected function getContainerExtensionClass()
+    protected function getContainerExtensionClass(): string
     {
         $basename = preg_replace('/Bundle$/', '', $this->getName());
         return $this->getNamespace() . '\\DependencyInjection\\' . $basename . 'Extension';
@@ -41,14 +32,16 @@ class SpreadsheetTranslatorBundle extends Bundle
      *
      * @return ExtensionInterface|null
      */
-    protected function createContainerExtension()
+    protected function createContainerExtension(): ?ExtensionInterface
     {
         if (class_exists($class = $this->getContainerExtensionClass())) {
             return new $class();
         }
+
+        return parent::createContainerExtension();
     }
 
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return $this->createContainerExtension();
     }

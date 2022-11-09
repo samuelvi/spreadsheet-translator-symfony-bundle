@@ -10,20 +10,30 @@
             "email": "samuelvicent@gmail.com"
         }
     ],
+    "require": {
+      "atico/spreadsheet-translator-core": "^1.0",
+      "php": ">=8.0",
+      "symfony/config": "^6.0",
+      "symfony/dependency-injection": "^6.0",
+      "symfony/yaml": "^6.0",
+      "symfony/http-kernel": "^6.0"
+    },
     "autoload": {
         "psr-4": {
             "Atico\\Bundle\\SpreadsheetTranslatorBundle\\": "./"
         }
     },
-    "repositories": [{
+    "_uncomment_me_repositories": [{
         "type": "path",
         "url": "../Core",
         "options": {
             "symlink": true
         }
     }],
-    "require": {
-        "atico/spreadsheet-translator-core": "^1.0",
-        "php": ">=5.5.9"
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "^6.0"
+        }
     }
 }
