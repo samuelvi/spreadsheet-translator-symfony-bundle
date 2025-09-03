@@ -1,5 +1,5 @@
 {
-    "name": "atico/spreadsheet-translator-symfony-bundle",
+    "name": "samuelvi/spreadsheet-translator-symfony-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Spreadsheet Translator Bundle - Translate your web site from excel files (local, google drive with or without auth, onedrive with or without auth)",
@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-      "atico/spreadsheet-translator-core": "^1.0",
+      "samuelvi/spreadsheet-translator-core": "^1.0",
       "php": ">=8.1",
       "symfony/config": "^6.0|7.0.*",
       "symfony/dependency-injection": "^6.0|7.0.*",
