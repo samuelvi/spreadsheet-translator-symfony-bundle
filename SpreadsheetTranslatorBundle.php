@@ -18,8 +18,6 @@ class SpreadsheetTranslatorBundle extends Bundle
 {
     /**
      * Returns the bundle's container extension class.
-     *
-     * @return string
      */
     protected function getContainerExtensionClass(): string
     {
@@ -29,8 +27,6 @@ class SpreadsheetTranslatorBundle extends Bundle
 
     /**
      * Creates the bundle's container extension.
-     *
-     * @return ExtensionInterface|null
      */
     protected function createContainerExtension(): ?ExtensionInterface
     {

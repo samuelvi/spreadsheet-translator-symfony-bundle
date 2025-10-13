@@ -18,6 +18,10 @@
       "symfony/yaml": "^6.0|7.0.*",
       "symfony/http-kernel": "^6.0|7.0.*"
     },
+    "require-dev": {
+        "rector/jack": "^0.2.9",
+        "rector/rector": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "Atico\\Bundle\\SpreadsheetTranslatorBundle\\": "./"

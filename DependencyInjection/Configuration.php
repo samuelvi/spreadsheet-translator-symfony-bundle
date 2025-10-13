@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritDoc}
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('atico_spreadsheet_translator');
         $rootNode = $treeBuilder->getRootNode(); // $treeBuilder->root('atico_spreadsheet_translator');
