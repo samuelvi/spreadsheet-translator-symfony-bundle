@@ -11,6 +11,7 @@
 
 namespace Atico\Bundle\SpreadsheetTranslatorBundle\DependencyInjection;
 
+use Override;
 use Exception;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -52,6 +53,7 @@ class SpreadsheetTranslatorExtension extends Extension
         $container->getDefinition('atico.spreadsheet_translator.manager')->setArgument(0, $config);
     }
 
+    #[Override]
     public function getAlias(): string
     {
         return 'atico_spreadsheet_translator';

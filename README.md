@@ -60,10 +60,10 @@ The bundle is constructed having in mind separation of concerns, so functionalli
 Installation
 ------------
 
-Add the atico/spreadsheet-translator-symfony-bundle package to your require section in the composer.json file (*)
+Add the samuelvi/spreadsheet-translator-symfony-bundle package to your require section in the composer.json file (*)
 
 ```bash
-$ composer require atico/spreadsheet-translator-symfony-bundle master-dev
+$ composer require samuelvi/spreadsheet-translator-symfony-bundle master-dev
 ```
 
 Add the Spreadsheet Translator Symfony Bundle to your application's kernel:
@@ -86,9 +86,9 @@ You need to separately install 3 adapters: a provider, a reader and an exporter.
 (*) For the default configuration to work, three additional packages are required:
 
 ```bash
-$ composer require atico/spreadsheet-translator-provider-localfile master-dev
-$ composer require atico/spreadsheet-translator-reader-matrix master-dev
-$ composer require atico/spreadsheet-translator-exporter-xliff master-dev
+$ composer require samuelvi/spreadsheet-translator-provider-localfile master-dev
+$ composer require samuelvi/spreadsheet-translator-reader-matrix master-dev
+$ composer require samuelvi/spreadsheet-translator-exporter-xliff master-dev
 ```
 
 
@@ -127,42 +127,42 @@ Adapters as independent Packages
 
 ```bash
 # Local File Provider 
-$ composer require atico/spreadsheet-translator-provider-localfile master-dev 
+$ composer require samuelvi/spreadsheet-translator-provider-localfile master-dev 
  
 # Google Drive Provider 
-$ composer require atico/spreadsheet-translator-provider-googledrive master-dev 
+$ composer require samuelvi/spreadsheet-translator-provider-googledrive master-dev 
  
 # Google Drive Provider with Authentication
-$ composer require atico/spreadsheet-translator-provider-googledriveauth master-dev  
+$ composer require samuelvi/spreadsheet-translator-provider-googledriveauth master-dev  
  
 # One Drive Provider 
-$ composer require atico/spreadsheet-translator-provider-onedrive master-dev  
+$ composer require samuelvi/spreadsheet-translator-provider-onedrive master-dev  
  
 # One Drive Provider with Authentication
-$ composer require atico/spreadsheet-translator-provider-onedriveauth master-dev  
+$ composer require samuelvi/spreadsheet-translator-provider-onedriveauth master-dev  
 ```
 
 - Readers:
 
 ```bash
 # Matrix reader
-$ composer require atico/spreadsheet-translator-reader-matrix master-dev 
+$ composer require samuelvi/spreadsheet-translator-reader-matrix master-dev 
  
 # Xlsx reader
-$ composer require atico/spreadsheet-translator-reader-xlsx master-dev 
+$ composer require samuelvi/spreadsheet-translator-reader-xlsx master-dev 
 ```
 
 - Exporters:
 
 ```bash
 # Xliff exporter
-$ composer require atico/spreadsheet-translator-exporter-xliff master-dev 
+$ composer require samuelvi/spreadsheet-translator-exporter-xliff master-dev 
  
 # Yml exporter
-$ composer require atico/spreadsheet-translator-exporter-yml master-dev 
+$ composer require samuelvi/spreadsheet-translator-exporter-yml master-dev 
  
 # Php exporter
-$ composer require atico/spreadsheet-translator-exporter-php master-dev 
+$ composer require samuelvi/spreadsheet-translator-exporter-php master-dev 
 ```
 
 Links to the libraries:
@@ -289,8 +289,8 @@ homepage:
 Requirements
 ------------
 
-  * PHP >=5.5.9
-  * Symfony ~2.3|~3.0
+  * PHP >=8.4
+  * Symfony ^7.0
 
 
 <br/>
