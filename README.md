@@ -63,13 +63,26 @@ Installation
 Add the samuelvi/spreadsheet-translator-symfony-bundle package to your require section in the composer.json file (*)
 
 ```bash
-$ composer require samuelvi/spreadsheet-translator-symfony-bundle master-dev
+$ composer require samuelvi/spreadsheet-translator-symfony-bundle
 ```
 
-Add the Spreadsheet Translator Symfony Bundle to your application's kernel:
+**For Symfony 7+**, the bundle will be automatically registered in `config/bundles.php`. If you need to register it manually:
 
 ```php
 <?php
+// config/bundles.php
+return [
+    // ...
+    Atico\Bundle\SpreadsheetTranslatorBundle\SpreadsheetTranslatorBundle::class => ['all' => true],
+    // ...
+];
+```
+
+**For older Symfony versions** (before Symfony 4), add it to your application's kernel:
+
+```php
+<?php
+// app/AppKernel.php
 public function registerBundles()
 {
     $bundles = array(
@@ -86,9 +99,9 @@ You need to separately install 3 adapters: a provider, a reader and an exporter.
 (*) For the default configuration to work, three additional packages are required:
 
 ```bash
-$ composer require samuelvi/spreadsheet-translator-provider-localfile master-dev
-$ composer require samuelvi/spreadsheet-translator-reader-matrix master-dev
-$ composer require samuelvi/spreadsheet-translator-exporter-xliff master-dev
+$ composer require samuelvi/spreadsheet-translator-provider-localfile
+$ composer require samuelvi/spreadsheet-translator-reader-matrix
+$ composer require samuelvi/spreadsheet-translator-exporter-xliff
 ```
 
 
@@ -97,24 +110,44 @@ $ composer require samuelvi/spreadsheet-translator-exporter-xliff master-dev
 Configuration
 -------------
 
-Add to config.yml the following entry:
+**For Symfony 7+**, add to `config/packages/atico_spreadsheet_translator.yaml`:
 
 ```yaml
+# config/packages/atico_spreadsheet_translator.yaml
 atico_spreadsheet_translator:
     frontend:
         provider:
             name: 'local_file' # 'google_drive', 'one_drive', 'google_drive_auth', 'one_drive_auth'
-            source_resource: '%kernel.root_dir%/../var/your_spreadsheet_file.xls'
+            source_resource: '%kernel.project_dir%/var/your_spreadsheet_file.xls'
         exporter:
             format: 'xliff' # 'php', 'yml'
+            prefix: 'demo_'
+            domain: 'common'
+            destination_folder: '%kernel.project_dir%/translations'
+        shared:
+            default_locale: 'en'
+            name_separator: '.' # translation subkey separator, i.e, homepage.h1, homepage.h2...
+            lazy_mode: true # constructs translation keys based on previous key values, avoid repeating same subkey several times
+```
+
+**For older Symfony versions**, add to `app/config/config.yml`:
+
+```yaml
+# app/config/config.yml
+atico_spreadsheet_translator:
+    frontend:
+        provider:
+            name: 'local_file'
+            source_resource: '%kernel.root_dir%/../var/your_spreadsheet_file.xls'
+        exporter:
+            format: 'xliff'
             prefix: 'demo_'
             domain: 'common'
             destination_folder: '%kernel.project_dir%/app/Resources/translations'
         shared:
             default_locale: 'en'
-            name_separator: '.' # translation subkey separator, i.e, homepage.h1, homepage.h2...
-            lazy_mode: true # constructs translation keys based on previous key values, avoid repeating same subkey several times
-
+            name_separator: '.'
+            lazy_mode: true
 ```
 
 
@@ -126,43 +159,43 @@ Adapters as independent Packages
 - Providers:
 
 ```bash
-# Local File Provider 
-$ composer require samuelvi/spreadsheet-translator-provider-localfile master-dev 
- 
-# Google Drive Provider 
-$ composer require samuelvi/spreadsheet-translator-provider-googledrive master-dev 
- 
+# Local File Provider
+$ composer require samuelvi/spreadsheet-translator-provider-localfile
+
+# Google Drive Provider
+$ composer require samuelvi/spreadsheet-translator-provider-googledrive
+
 # Google Drive Provider with Authentication
-$ composer require samuelvi/spreadsheet-translator-provider-googledriveauth master-dev  
- 
-# One Drive Provider 
-$ composer require samuelvi/spreadsheet-translator-provider-onedrive master-dev  
- 
+$ composer require samuelvi/spreadsheet-translator-provider-googledriveauth
+
+# One Drive Provider
+$ composer require samuelvi/spreadsheet-translator-provider-onedrive
+
 # One Drive Provider with Authentication
-$ composer require samuelvi/spreadsheet-translator-provider-onedriveauth master-dev  
+$ composer require samuelvi/spreadsheet-translator-provider-onedriveauth
 ```
 
 - Readers:
 
 ```bash
 # Matrix reader
-$ composer require samuelvi/spreadsheet-translator-reader-matrix master-dev 
- 
+$ composer require samuelvi/spreadsheet-translator-reader-matrix
+
 # Xlsx reader
-$ composer require samuelvi/spreadsheet-translator-reader-xlsx master-dev 
+$ composer require samuelvi/spreadsheet-translator-reader-xlsx
 ```
 
 - Exporters:
 
 ```bash
 # Xliff exporter
-$ composer require samuelvi/spreadsheet-translator-exporter-xliff master-dev 
- 
+$ composer require samuelvi/spreadsheet-translator-exporter-xliff
+
 # Yml exporter
-$ composer require samuelvi/spreadsheet-translator-exporter-yml master-dev 
- 
+$ composer require samuelvi/spreadsheet-translator-exporter-yml
+
 # Php exporter
-$ composer require samuelvi/spreadsheet-translator-exporter-php master-dev 
+$ composer require samuelvi/spreadsheet-translator-exporter-php
 ```
 
 Links to the libraries:
@@ -276,7 +309,7 @@ homepage:
 </li>
 
 <li>
-<a href="https://github.com/samuelvi/translator-symfony-demo-google-to-yml" target="_blank">Google Spreadsheet with read permisions as source (without Auth) and yml format for translated file.</a>
+<a href="https://github.com/samuelvi/translator-symfony-demo-google-drive-provider-yml-exporter" target="_blank">Google Spreadsheet with read permisions as source (without Auth) and yml format for translated file.</a>
 <li>
 
 <a href="https://github.com/samuelvi/translator-symfony-demo-google-auth-to-php" target="_blank">Google Spreadsheet with Authentication required as source and php format for translated file.</a>
@@ -291,6 +324,33 @@ Requirements
 
   * PHP >=8.4
   * Symfony ^7.0
+
+### Modern PHP Features
+
+This bundle leverages modern PHP 8.4+ features including:
+
+- **PHP 8.3+ Override Attribute**: Uses `#[Override]` attribute for better code safety when overriding parent methods
+- **Strict Types**: All files use `declare(strict_types=1)` for type safety
+- **Type Declarations**: Full return type and parameter type declarations throughout the codebase
+- **Constructor Property Promotion**: Modern constructor syntax where applicable
+
+
+<br/>
+
+Development
+-----------
+
+### Code Quality with Rector
+
+This bundle uses [Rector](https://getrector.com/) for automated code quality and upgrades to PHP 8.4+ and Symfony 7.
+
+```bash
+# Check what changes Rector would make (dry-run)
+vendor/bin/rector process --dry-run
+
+# Apply changes
+vendor/bin/rector process
+```
 
 
 <br/>
