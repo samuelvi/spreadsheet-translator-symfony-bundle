@@ -340,17 +340,97 @@ This bundle leverages modern PHP 8.4+ features including:
 Development
 -----------
 
+### Quick Start with Makefile
+
+This bundle includes a Makefile for common development tasks:
+
+```bash
+# Show all available commands
+make help
+
+# Install dependencies
+make install
+
+# Run all checks (validate, lint, rector-dry)
+make check
+
+# Run tests
+make test
+
+# Run tests with coverage
+make test-coverage
+
+# Run CI pipeline (install, validate, lint, rector-dry, test)
+make ci
+```
+
 ### Code Quality with Rector
 
 This bundle uses [Rector](https://getrector.com/) for automated code quality and upgrades to PHP 8.4+ and Symfony 7.
 
 ```bash
 # Check what changes Rector would make (dry-run)
+make rector-dry
+# OR
 vendor/bin/rector process --dry-run
 
 # Apply changes
+make rector
+# OR
 vendor/bin/rector process
 ```
+
+The Rector configuration includes:
+- PHP 8.4+ modern syntax upgrades
+- Symfony 7 best practices
+- Code quality improvements
+- Type declarations
+- Dead code removal
+- PHPUnit best practices
+
+### Testing
+
+This bundle uses PHPUnit 11 for testing:
+
+```bash
+# Run all tests
+make test
+
+# Run tests with coverage report
+make test-coverage
+
+# Run specific test
+vendor/bin/phpunit tests/SpreadsheetTranslatorBundleTest.php
+
+# Run tests with verbose output
+vendor/bin/phpunit --testdox
+```
+
+Test coverage reports are generated in the `coverage/` directory.
+
+### Code Validation
+
+```bash
+# Validate composer.json
+make validate
+
+# Check PHP syntax
+make lint
+
+# Run all checks
+make check
+```
+
+### Continuous Integration
+
+This bundle uses GitHub Actions for continuous integration. The CI pipeline:
+- Runs on PHP 8.4
+- Validates composer.json
+- Checks code syntax
+- Runs Rector in dry-run mode
+- Executes all unit tests
+
+See `.github/workflows/ci.yml` for the complete configuration.
 
 
 <br/>

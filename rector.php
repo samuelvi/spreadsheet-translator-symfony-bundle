@@ -4,35 +4,39 @@ declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use Rector\Doctrine\Set\DoctrineSetList;
-use Rector\Set\ValueObject\LevelSetList;
-use Rector\Set\ValueObject\SetList;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Symfony\Set\SymfonySetList;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->paths([
+return RectorConfig::configure()
+    ->withPaths([
         __DIR__ . '/DependencyInjection',
         __DIR__ . '/SpreadsheetTranslatorBundle.php',
         __DIR__ . '/Resources',
-    ]);
-
-    // define sets of rules
-    $rectorConfig->sets([
-        // PHP 8.4+ rules
-        LevelSetList::UP_TO_PHP_84,
-        SetList::CODE_QUALITY,
-        SetList::DEAD_CODE,
-        SetList::TYPE_DECLARATION,
-        SetList::EARLY_RETURN,
-        SetList::PRIVATIZATION,
-
+        __DIR__ . '/tests',
+    ])
+    ->withPhpSets(php84: true)
+    ->withPreparedSets(
+        deadCode: true,
+        codeQuality: true,
+        codingStyle: true,
+        typeDeclarations: true,
+        privatization: true,
+        naming: true,
+        instanceOf: true,
+        earlyReturn: true,
+    )
+    ->withSets([
         // Symfony 7 rules
         SymfonySetList::SYMFONY_70,
         SymfonySetList::SYMFONY_CODE_QUALITY,
         SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
-        DoctrineSetList::DOCTRINE_CODE_QUALITY,
-    ]);
 
-    // Optionally, import names and remove unused imports
-    $rectorConfig->importNames();
-    $rectorConfig->removeUnusedImports();
-};
+        // Doctrine
+        DoctrineSetList::DOCTRINE_CODE_QUALITY,
+
+        // PHPUnit
+        PHPUnitSetList::PHPUNIT_110,
+        PHPUnitSetList::PHPUNIT_CODE_QUALITY,
+    ])
+    ->withImportNames(importShortClasses: false, removeUnusedImports: true)
+    ->withParallel();

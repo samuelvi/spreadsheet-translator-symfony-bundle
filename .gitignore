@@ -2,3 +2,12 @@ composer.lock
 vendor/
 .idea
 .DS_Store
+
+# Testing
+.phpunit.cache
+coverage/
+phpunit.xml
+*.xml.dist.bak
+
+# Rector
+rector.php.cache

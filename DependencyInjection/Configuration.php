@@ -29,9 +29,9 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('atico_spreadsheet_translator');
-        $rootNode = $treeBuilder->getRootNode(); // $treeBuilder->root('atico_spreadsheet_translator');
+        $nodeDefinition = $treeBuilder->getRootNode(); // $treeBuilder->root('atico_spreadsheet_translator');
 
-        $rootNode
+        $nodeDefinition
             ->isRequired()
             ->requiresAtLeastOneElement()
             ->useAttributeAsKey('name')
@@ -54,6 +54,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->arrayNode('exporter')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('format')->defaultValue('xliff')
                         ->end()
@@ -64,6 +65,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->arrayNode('shared')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('temp_local_source_file')
                         ->end()

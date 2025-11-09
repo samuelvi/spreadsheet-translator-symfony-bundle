@@ -37,22 +37,22 @@ class SpreadsheetTranslatorExtension extends Extension
     }
 
     /** @throws Exception */
-    private function loadServices(ContainerBuilder $container) : void
+    private function loadServices(ContainerBuilder $containerBuilder) : void
     {
-        $loader = new YamlFileLoader(
-            $container,
+        $yamlFileLoader = new YamlFileLoader(
+            $containerBuilder,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
-        $loader->load('services.yml');
+        $yamlFileLoader->load('services.yml');
     }
 
-    private function injectConfigurationIntoSpreadsheetTranslatorManager(array $configs, ContainerBuilder $container) : void
+    private function injectConfigurationIntoSpreadsheetTranslatorManager(array $configs, ContainerBuilder $containerBuilder) : void
     {
         $processor = new Processor();
         $configuration = new Configuration();
         
         $config = $processor->processConfiguration($configuration, $configs);
-        $container->getDefinition('atico.spreadsheet_translator.manager')->setArgument(0, $config);
+        $containerBuilder->getDefinition('atico.spreadsheet_translator.manager')->setArgument(0, $config);
     }
 
     #[Override]
